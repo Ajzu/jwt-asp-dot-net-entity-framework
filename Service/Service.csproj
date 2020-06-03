@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C24C31A5-4175-4128-9358-ABA6033685CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Service</RootNamespace>
+    <AssemblyName>Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="Interface\ILoginService.cs" />
+    <Compile Include="Interface\IForgotPasswordService.cs" />
+    <Compile Include="Interface\IRegistrationService.cs" />
+    <Compile Include="Interface\IUserService.cs" />
+    <Compile Include="Interface\IChecklistTypeCheckPointService.cs" />
+    <Compile Include="Interface\ICheckPointService.cs" />
+    <Compile Include="Interface\IChecklistTypeService.cs" />
+    <Compile Include="Interface\IVideoService.cs" />
+    <Compile Include="Interface\IVideoTypeService.cs" />
+    <Compile Include="Interface\IClientService.cs" />
+    <Compile Include="Interface\ISubjectChapterService.cs" />
+    <Compile Include="Interface\ICourseSubjectService.cs" />
+    <Compile Include="Interface\IProfileOldService.cs" />
+    <Compile Include="Interface\IRefreshTokenService.cs" />
+    <Compile Include="Interface\ICourseService.cs" />
+    <Compile Include="Interface\IChapterService.cs" />
+    <Compile Include="Interface\ISubjectService.cs" />
+    <Compile Include="Interface\IUserOldService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\ForgotPasswordService.cs" />
+    <Compile Include="Service\RegistrationService.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\ChecklistTypeCheckPointService.cs" />
+    <Compile Include="Service\CheckPointService.cs" />
+    <Compile Include="Service\ChecklistTypeService.cs" />
+    <Compile Include="Service\VideoService.cs" />
+    <Compile Include="Service\VideoTypeService.cs" />
+    <Compile Include="Service\ClientService.cs" />
+    <Compile Include="Service\SubjectChapterService.cs" />
+    <Compile Include="Service\CourseSubjectService.cs" />
+    <Compile Include="Service\EmailServices.cs" />
+    <Compile Include="Service\ProfileOldService.cs" />
+    <Compile Include="Service\RefreshTokenService.cs" />
+    <Compile Include="Service\CourseService.cs" />
+    <Compile Include="Service\ChapterService.cs" />
+    <Compile Include="Service\SubjectService.cs" />
+    <Compile Include="Service\UserOldService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTOModel\DTOModel.csproj">
+      <Project>{C92CF04C-955F-4F48-98D5-048D5BE71A47}</Project>
+      <Name>DTOModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnityModel\EnityModel.csproj">
+      <Project>{EF943EF6-65A7-47B9-B871-4871D0F76336}</Project>
+      <Name>EnityModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositorie\Repositorie.csproj">
+      <Project>{6131C29F-889E-4762-87C4-0E5182572FCE}</Project>
+      <Name>Repositorie</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{47A8371F-6B59-4AF0-81BA-8661AFEFCF50}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
